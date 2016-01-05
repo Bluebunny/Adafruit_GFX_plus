@@ -13,6 +13,8 @@ The overal performance gain will be dependant on the font and how many multipixe
 
 The test case for the performance test here is to print "Hello world" (lower case w) in different fonts. 
 
+When saved in your library folder it must be given the name Adafruit_GFX (remove the _plus from the folder name)
+
 # Adafruit GFX Library
 
 This is the core graphics library for all our displays, providing a common set of graphics primitives (points, lines, circles, etc.). It needs to be paired with a hardware-specific library for each display device we carry (to handle the lower-level functions).
