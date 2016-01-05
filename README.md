@@ -7,7 +7,7 @@ To aid performance enhancment tests there are #define switches within that funct
 If FAST_LINE is #defined then the free fonts are rendered using horizontal lines this makes rendering fonts 2-5 times faster. Particularly good for large fonts.
 This is an elegant solution since it still uses generic functions present in the stock library.
 
-If FAST_SHIFT is defined then a slightly faster (for AVR) shifting bit mask is used Performance gain is small but worthwhile at 10%.
+If FAST_SHIFT is defined then a slightly faster (for AVR) shifting bit mask is used. The performance gain is small but worthwhile at 10%.
 
 The overal performance gain will be dependant on the font and how many multipixel horizontal lines are in the rendered character. Even small fonts show a significant perfromance improvement even thout there are many single pixel plots needed.
 
