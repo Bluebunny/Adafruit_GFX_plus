@@ -588,6 +588,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
 
   #ifdef FAST_SHIFT
     uint16_t hpc = 0; // Horizontal foreground pixel count
+  
     for(yy=0; yy<h; yy++) {
       for(xx=0; xx<w; xx++) {
         if(bit == 0) {
@@ -597,8 +598,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
         if(bits & bit) hpc++;
         else {
           if (hpc) {
-            if(size == 1) drawFastHLine(x+xo+xx-hpc, y+yo+yy, hpc, color);
-            else fillRect(x+(xo16+xx-hpc)*size, y+(yo16+yy)*size, size*hpc, size, color);
+            for (byte i=0;i<size;i++) drawFastHLine(x+xo+xx-hpc, y+yo+yy+i, hpc, color);
             hpc=0;
           }
         }
@@ -606,8 +606,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
       }
       // Draw pixels for this line as we are about to increment yy
       if (hpc) {
-        if(size == 1) drawFastHLine(x+xo+xx-hpc, y+yo+yy, hpc, color);
-        else fillRect(x+(xo16+xx-hpc)*size, y+(yo16+yy)*size, size*hpc, size, color);
+        for (byte i=0;i<size;i++) drawFastHLine(x+xo+xx-hpc, y+yo+yy+i, hpc, color);
         hpc=0;
       }
     }
@@ -621,8 +620,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
         if(bits & 0x80) hpc++;
         else {
           if (hpc) {
-            if(size == 1) drawFastHLine(x+xo+xx-hpc, y+yo+yy, hpc, color);
-            else fillRect(x+(xo16+xx-hpc)*size, y+(yo16+yy)*size, size*hpc, size, color);
+            for (byte i=0;i<size;i++) drawFastHLine(x+xo+xx-hpc, y+yo+yy+i, hpc, color);
             hpc=0;
           }
         }
@@ -630,8 +628,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
       }
       // Draw pixels for this line as we are about to increment yy
       if (hpc) {
-        if(size == 1) drawFastHLine(x+xo+xx-hpc, y+yo+yy, hpc, color);
-        else fillRect(x+(xo16+xx-hpc)*size, y+(yo16+yy)*size, size*hpc, size, color);
+        for (byte i=0;i<size;i++) drawFastHLine(x+xo+xx-hpc, y+yo+yy+i, hpc, color);
         hpc=0;
       }
     }
