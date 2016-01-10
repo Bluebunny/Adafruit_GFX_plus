@@ -581,8 +581,8 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
 // If FAST_SHIFT is defined then a slightly faster (for AVR) shifting bit mask is used
 // Performance gaing is small but worthwhile 2%.
 
-#define FAST_HLINE
-#define FAST_SHIFT
+#define FAST_HLINE // Faster plotting using horizontal lines ~3.5x faster
+#define FAST_SHIFT // Faster shift if defined ~10% faster
 
 #ifdef FAST_HLINE
 
