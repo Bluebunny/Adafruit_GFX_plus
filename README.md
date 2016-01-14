@@ -9,7 +9,7 @@ This is an elegant solution since it still uses generic functions present in the
 
 If FAST_SHIFT is defined then a slightly faster (for AVR) shifting bit mask is used. The performance gain is small but worthwhile at 10%.
 
-The overal performance gain will be dependant on the font and how many multipixel horizontal lines are in the rendered character. Even small fonts show a significant perfromance improvement even thout there are many single pixel plots needed.
+The overal performance gain will be dependant on the font and how many multipixel horizontal lines are in the rendered character. Even small fonts show a significant perfromance improvement even though there are many single pixel plots needed.
 
 The test case for the performance test here is to print "Hello world" (lower case w) in different fonts. 
 
